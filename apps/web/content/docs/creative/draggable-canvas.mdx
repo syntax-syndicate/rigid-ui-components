@@ -8,12 +8,14 @@ import DraggableCanvasPreview from "@/components/previews/draggable-canvas";
 
 ## Usage
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code"]} contentClassName="mt-6">
   <Tab value="Preview">
-    <DraggableCanvasPreview />
+    <div className="w-full relative rounded-xl p-8 bg-background/50 border backdrop-blur-sm">
+      <DraggableCanvasPreview />
+    </div>
   </Tab>
   <Tab value="Code">
-    ```tsx title="draggable-canvas-demo.tsx"
+   ```tsx
 "use client";
 
 import { DraggableCanvas } from "@/components/draggable-canvas";
@@ -23,26 +25,25 @@ export default function DraggableCanvasDemo() {
         { src: '/image/1.jpg', top: '20%', left: '35%' },
         { src: '/image/2.jpg', top: '40%', left: '45%' },
         { src: '/image/3.jpg', top: '30%', left: '63%' }
-      ]
+      ];
 
-return (
-      <div className="w-full h-96 relative overflow-hidden border rounded-lg">
+      return (
+        <div className="w-full h-96 relative overflow-hidden border rounded-lg">
           <DraggableCanvas
-              items={items}
-              width="200vw"
-              height="200vh"
-              showBoundary={true}
-              showCornerLabels={true}
-              friction={0.92}
-              elasticity={0.2}
-              reboundDamping={0.8}
-              initialCenter={true}
+            items={items}
+            width="200vw"
+            height="200vh"
+            showBoundary={true}
+            showCornerLabels={true}
+            friction={0.92}
+            elasticity={0.2}
+            reboundDamping={0.8}
+            initialCenter={true}
           />
-      </div>
+        </div>
       );
 }
 ```
-
   </Tab>
 </Tabs>
 

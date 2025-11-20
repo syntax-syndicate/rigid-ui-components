@@ -8,31 +8,33 @@ import DataRevealPreview from "@/components/previews/data-reveal";
 
 ## Usage
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code"]} contentClassName="mt-6">
   <Tab value="Preview">
-    <DataRevealPreview />
+    <div className="w-full relative rounded-xl p-8 bg-background/50 border backdrop-blur-sm">
+      <DataRevealPreview />
+    </div>
   </Tab>
   <Tab value="Code">
-    ```tsx title="data-reveal-demo.tsx"
+```tsx
 "use client";
 
 import { DataReveal, RevealButton, RevealContainer, RevealItem } from "@/components/data-reveal";
 
 export default function DataRevealDemo() {
-        return (
-            <div className="space-y-6">
-                <DataReveal>
-                    <RevealButton text="Show Details" />
-                    <RevealContainer className="gap-2">
-                        <RevealItem content="john@example.com" />
-                        <RevealItem content="+1 234-567-8900" />
-                        <RevealItem content="#12345" />
-                    </RevealContainer>
-                </DataReveal>
-            </div>
-        );
+  return (
+    <div className="space-y-6">
+      <DataReveal>
+        <RevealButton text="Show Details" />
+        <RevealContainer className="gap-2">
+          <RevealItem content="john@example.com" />
+          <RevealItem content="+1 234-567-8900" />
+          <RevealItem content="#12345" />
+        </RevealContainer>
+      </DataReveal>
+    </div>
+  );
 }
-    ```
+```
   </Tab>
 </Tabs>
 
@@ -47,7 +49,8 @@ npx shadcn@latest add @rigidui/data-reveal
 ## Features
 
 <p className="md:text-sm mb-4! text-gray-700 dark:text-gray-300 max-w-3xl">
-The Data Reveal component provides a secure and elegant way to display sensitive information with beautiful animations and user control.
+  The Data Reveal component provides a secure and elegant way to display
+  sensitive information with beautiful animations and user control.
 </p>
 
 <Cards>
@@ -55,25 +58,29 @@ The Data Reveal component provides a secure and elegant way to display sensitive
     icon={<Eye className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />}
     title="Smooth Animations"
   >
-    Beautiful staggered animations with configurable timing, blur effects, and smooth transitions for revealing content.
+    Beautiful staggered animations with configurable timing, blur effects, and
+    smooth transitions for revealing content.
   </Card>
   <Card
     icon={<Shield className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />}
     title="Security Focused"
   >
-    Perfect for displaying sensitive information like API keys, personal data, or confidential details with user consent.
+    Perfect for displaying sensitive information like API keys, personal data,
+    or confidential details with user consent.
   </Card>
   <Card
     icon={<Timer className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />}
     title="Auto-hide Feature"
   >
-    Optional auto-hide functionality that automatically conceals revealed content after a specified delay for enhanced security.
+    Optional auto-hide functionality that automatically conceals revealed
+    content after a specified delay for enhanced security.
   </Card>
   <Card
     icon={<Settings className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />}
     title="Highly Customizable"
   >
-    Compound component pattern with full control over styling, content, and behavior for each reveal item.
+    Compound component pattern with full control over styling, content, and
+    behavior for each reveal item.
   </Card>
 </Cards>
 
@@ -97,34 +104,35 @@ The Data Reveal component follows a compound component pattern for maximum flexi
 <TypeTable
   type={{
     children: {
-      description: 'The child components (Button, Container, Items)',
-      type: 'ReactNode',
+      description: "The child components (Button, Container, Items)",
+      type: "ReactNode",
       required: true,
     },
     defaultRevealed: {
-      description: 'Whether content is revealed by default',
-      type: 'boolean',
-      default: 'false',
+      description: "Whether content is revealed by default",
+      type: "boolean",
+      default: "false",
     },
     onToggle: {
-      description: 'Callback function called when reveal state changes',
-      type: '(isRevealed: boolean) => void',
-      default: 'undefined',
+      description: "Callback function called when reveal state changes",
+      type: "(isRevealed: boolean) => void",
+      default: "undefined",
     },
     disabled: {
-      description: 'Whether the reveal functionality is disabled',
-      type: 'boolean',
-      default: 'false',
+      description: "Whether the reveal functionality is disabled",
+      type: "boolean",
+      default: "false",
     },
     autoHide: {
-      description: 'Whether to automatically hide content after reveal',
-      type: 'boolean',
-      default: 'false',
+      description: "Whether to automatically hide content after reveal",
+      type: "boolean",
+      default: "false",
     },
     autoHideDelay: {
-      description: 'Delay in milliseconds before auto-hiding (when autoHide is true)',
-      type: 'number',
-      default: '3000',
+      description:
+        "Delay in milliseconds before auto-hiding (when autoHide is true)",
+      type: "number",
+      default: "3000",
     },
   }}
 />
@@ -134,18 +142,18 @@ The Data Reveal component follows a compound component pattern for maximum flexi
 <TypeTable
   type={{
     children: {
-      description: 'Custom button content (overrides text prop)',
-      type: 'ReactNode',
-      default: 'undefined',
+      description: "Custom button content (overrides text prop)",
+      type: "ReactNode",
+      default: "undefined",
     },
     text: {
-      description: 'Button text when no children provided',
-      type: 'string',
+      description: "Button text when no children provided",
+      type: "string",
       default: "'Reveal'",
     },
     className: {
-      description: 'Additional CSS classes for the button',
-      type: 'string',
+      description: "Additional CSS classes for the button",
+      type: "string",
       default: "''",
     },
   }}
@@ -156,13 +164,13 @@ The Data Reveal component follows a compound component pattern for maximum flexi
 <TypeTable
   type={{
     children: {
-      description: 'The DataReveal.Item components to animate',
-      type: 'ReactNode',
+      description: "The DataReveal.Item components to animate",
+      type: "ReactNode",
       required: true,
     },
     className: {
-      description: 'Additional CSS classes for the container',
-      type: 'string',
+      description: "Additional CSS classes for the container",
+      type: "string",
       default: "''",
     },
   }}
@@ -173,23 +181,23 @@ The Data Reveal component follows a compound component pattern for maximum flexi
 <TypeTable
   type={{
     children: {
-      description: 'Custom item content (overrides content prop)',
-      type: 'ReactNode',
-      default: 'undefined',
+      description: "Custom item content (overrides content prop)",
+      type: "ReactNode",
+      default: "undefined",
     },
     content: {
-      description: 'Text content when no children provided',
-      type: 'string',
-      default: 'undefined',
+      description: "Text content when no children provided",
+      type: "string",
+      default: "undefined",
     },
     index: {
-      description: 'Animation index for staggered timing (starts from 0)',
-      type: 'number',
-      default: '0',
+      description: "Animation index for staggered timing (starts from 0)",
+      type: "number",
+      default: "0",
     },
     className: {
-      description: 'Additional CSS classes for the item',
-      type: 'string',
+      description: "Additional CSS classes for the item",
+      type: "string",
       default: "''",
     },
   }}
